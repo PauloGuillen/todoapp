@@ -2,12 +2,7 @@ import axios from 'axios';
 
 class TodoDataService {
     getAll(token){
-        console.log('getAll token: ', token);
-  
         axios.defaults.headers.common["Authorization"] = "Token " + token;
-
-        console.log('Authorization: ', axios.defaults.headers.common["Authorization"]);
-
         return axios.get('http://localhost:8000/api/todos/');
     }
 
